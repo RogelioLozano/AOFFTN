@@ -20,4 +20,13 @@ __pycache__/
 af_timeseries_test.csv
 corr_matrix.csv
 read_network.py
-
+networks_saved_v2/
+normalization/distan_datasets/distances_YEI_v2.csv
+normalization/gdp_pop_datasets_V2/
+normalization/gdp_pop_datasets_V3/
+read_network_v2.py
+Exploration_V2/read_network.py
+Exploration_V2/datasets/
+Exploration_V2/clustering_TS/proximity_measures/*
+Exploration_V2/clustering_TS/clust_performance_eval/*	
+networks_saved_v3/*
