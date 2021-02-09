@@ -5,6 +5,7 @@ trade_matrix_clean.csv
 /normalization/pop_country_year.json
 AF_trade_200612_v2.ipynb
 **.png
+**.pdf
 world_shapefiles/
 normalization/datasets_intersection/notas.txt
 datasets_choroplets/
@@ -30,3 +31,4 @@ Exploration_V2/read_network.py
 Exploration_V2/datasets/
 Exploration_V2/clustering_TS/clust_performance_eval/
 Exploration_V2/clustering_TS/proximity_measures/
+Exploration_V2/mapasDE_classes_af/
