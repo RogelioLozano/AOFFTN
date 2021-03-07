@@ -21,7 +21,7 @@ def annotated_plot(af_data,good_performance):
 
 
 def load_data():
-    pathto=os.path.join(os.getenv('HOME'),'Desktop','food_trade_network','AOFFTN','Exploration_V2','datasetsV2')
+    pathto=os.path.join(os.getenv('HOME'),'food_trade_network','AOFFTN','Exploration_V2','datasetsV2')
     files=os.listdir(pathto)
     data={}
     for file in files:
