@@ -10,16 +10,6 @@ def get_mean_af(af):
     mean_af_piv=mean_af.pivot(index='country',columns='date',values='mean_af')
     return mean_af_piv
 
-def annotated_plot(af_data,good_performance):
-    """Expects a pandas dataframe in the form of a pivot table with rows the years and columns the countries"""
-    fig,ax=plt.subplots()
-    x,y=af_data.mean(axis=0),good_performance.sum(axis=0)
-    n=af_data.columns
-    ax.scatter(x,y)
-    for i, txt in enumerate(n):
-        ax.annotate(txt, (x[i], y[i]))
-
-
 def load_data():
     pathto=os.path.join(os.getenv('HOME'),'food_trade_network','AOFFTN','Exploration_V2','datasetsV2')
     files=os.listdir(pathto)
@@ -27,3 +17,4 @@ def load_data():
     for file in files:
         data[file[:5]]=pd.read_csv(os.path.join(pathto,file))
     return data
+

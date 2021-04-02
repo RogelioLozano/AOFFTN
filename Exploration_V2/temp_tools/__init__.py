@@ -1,5 +1,6 @@
 import numpy as np
 import scipy.spatial as sp
+from sklearn.preprocessing import StandardScaler
 
 def hopkins_stat(X,p,trials=50):
 
@@ -22,12 +23,14 @@ def hopkins_stat(X,p,trials=50):
     """
 
     Hopkins_list = []
+    X = StandardScaler().fit_transform(X)
     for _ in range(trials):
 
-        generated = np.random.uniform(size=(p,2))
+        generated = np.random.uniform(size=(p,X.shape[1]))
+        generated = StandardScaler().fit_transform(generated)
         us = np.zeros(p)
         for i,point in enumerate(generated):
-            feature_matrix = np.concatenate([point.reshape(-1,2),X])
+            feature_matrix = np.concatenate([point.reshape(1,-1),X])
             dist = sp.distance.squareform(sp.distance.pdist(feature_matrix))
             nearest_neighbor_index = np.argmin(dist[0][1:]) + 1
             nearest_neighbor_distance = dist[0][nearest_neighbor_index]
@@ -44,7 +47,7 @@ def hopkins_stat(X,p,trials=50):
             nearest_neighbor_distance = dist[0][nearest_neighbor_index]
             ws[i] = nearest_neighbor_distance    
 
-        Hopkins = np.sum(ws) / ( np.sum(us)+np.sum(ws) )
+        Hopkins = np.sum(us) / ( np.sum(us)+np.sum(ws) )
 
         Hopkins_list.append(Hopkins)
 
