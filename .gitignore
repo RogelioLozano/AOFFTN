@@ -6,6 +6,9 @@ trade_matrix_clean.csv
 AF_trade_200612_v2.ipynb
 **.png
 **.pdf
+**.xlsx
+**.xlsm
+**.csv
 world_shapefiles/
 normalization/datasets_intersection/notas.txt
 datasets_choroplets/
